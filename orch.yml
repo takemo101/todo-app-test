@@ -4,3 +4,11 @@ backend:
 loop:
   max_iterations: 100
   completion_promise: "LOOP_COMPLETE"
+state:
+  use_github_labels: true # ラベル機能を有効化
+  label_prefix: "orch"
+pr:
+  autoMerge: true # 自動マージを有効化
+  mergeMethod: squash # squash | merge | rebase
+  deleteBranch: true # マージ後にブランチ削除
+  ciTimeoutSecs: 1800

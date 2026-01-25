@@ -33,15 +33,15 @@
       "id": "task-mktrlwmf-tvg6",
       "issueNumber": 2,
       "issueTitle": "src/math.ts に multiply と divide 関数を実装",
-      "status": "running",
+      "status": "completed",
       "currentHat": null,
       "iteration": 1,
       "maxIterations": 100,
       "lastEvent": null,
       "error": null,
       "startedAt": "2026-01-25T13:19:07.624Z",
-      "updatedAt": "2026-01-25T13:19:08.994Z",
-      "completedAt": null
+      "updatedAt": "2026-01-25T13:20:02.266Z",
+      "completedAt": "2026-01-25T13:20:02.266Z"
     }
   }
 }

@@ -1,0 +1,6 @@
+version: "1.0"
+backend:
+  type: opencode
+loop:
+  max_iterations: 100
+  completion_promise: "LOOP_COMPLETE"

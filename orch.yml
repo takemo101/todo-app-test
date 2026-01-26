@@ -8,7 +8,7 @@ state:
   use_github_labels: true # ラベル機能を有効化
   label_prefix: "orch"
 pr:
-  autoMerge: true # 自動マージを有効化
-  mergeMethod: squash # squash | merge | rebase
-  deleteBranch: true # マージ後にブランチ削除
-  ciTimeoutSecs: 1800
+  auto_merge: true # 自動マージを有効化
+  merge_method: squash # squash | merge | rebase
+  delete_branch: true # マージ後にブランチ削除
+  ci_timeout_secs: 1800

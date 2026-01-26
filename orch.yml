@@ -9,6 +9,6 @@ state:
   label_prefix: "orch"
 pr:
   auto_merge: true # 自動マージを有効化
-  merge_method: squash # squash | merge | rebase
+  merge_method: merge # squash | merge | rebase
   delete_branch: true # マージ後にブランチ削除
   ci_timeout_secs: 1800

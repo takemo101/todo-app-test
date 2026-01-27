@@ -23,8 +23,3 @@ worktree:
     - ".env"
     - ".envrc"
     - ".env.local"
-sandbox:
-  type: docker
-  docker:
-    image: node:20-alpine
-    network: bridge

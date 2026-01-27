@@ -1,0 +1,13 @@
+{
+  "worktrees": [
+    {
+      "issueNumber": 4,
+      "path": ".worktrees/issue-4",
+      "branch": "feature/issue-4",
+      "environmentType": "container-use",
+      "environmentId": null,
+      "createdAt": "2026-01-27T12:28:50.473Z",
+      "status": "active"
+    }
+  ]
+}

@@ -7,6 +7,9 @@ loop:
 state:
   use_github_labels: true # ラベル機能を有効化
   label_prefix: "orch"
+run:
+  create_pr: true # PR自動作成を有効化
+  auto_mode: false # 承認ゲートを使用する場合はfalse
 pr:
   auto_merge: true # 自動マージを有効化
   merge_method: merge # squash | merge | rebase

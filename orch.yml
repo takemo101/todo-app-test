@@ -12,3 +12,13 @@ pr:
   merge_method: merge # squash | merge | rebase
   delete_branch: true # マージ後にブランチ削除
   ci_timeout_secs: 1800
+worktree:
+  enabled: true
+  base_dir: ".worktrees"
+  auto_cleanup: true
+  copy_env_files:
+    - ".env"
+    - ".envrc"
+    - ".env.local"
+sandbox:
+  type: container-use

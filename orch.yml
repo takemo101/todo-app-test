@@ -18,6 +18,7 @@ pr:
 worktree:
   enabled: true
   base_dir: ".worktrees"
+  base_branch: main
   auto_cleanup: true
   copy_env_files:
     - ".env"

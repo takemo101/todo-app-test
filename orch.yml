@@ -1,14 +1,77 @@
 version: "1.0"
+
+# バックエンド設定
 backend:
   type: opencode
+
+# ループ設定
 loop:
   max_iterations: 100
   completion_promise: "LOOP_COMPLETE"
+  idle_timeout_secs: 1800
+
+# 状態管理
 state:
-  use_github_labels: true # ラベル機能を有効化
+  use_github_labels: true
   label_prefix: "orch"
+
+# PR設定
 pr:
-  auto_merge: true # 自動マージを有効化
-  merge_method: merge # squash | merge | rebase
-  delete_branch: true # マージ後にブランチ削除
+  auto_merge: true
+  merge_method: merge
+  delete_branch: true
   ci_timeout_secs: 1800
+
+# ========================================
+# v2.0.0 新機能: Worktree設定
+# ========================================
+worktree:
+  # worktree機能を有効化（並列実行環境）
+  enabled: true
+  
+  # worktreeのベースディレクトリ
+  base_dir: ".worktrees"
+  
+  # PRマージ後に自動クリーンアップ
+  # - worktree削除
+  # - ローカル/リモートブランチ削除
+  # - container-use環境削除
+  auto_cleanup: true
+  
+  # worktreeにコピーする環境ファイル
+  copy_env_files:
+    - ".env"
+    - ".envrc"
+    - ".env.local"
+
+# ========================================
+# v2.0.0 新機能: Run設定（CLIデフォルト値）
+# ========================================
+run:
+  # --auto をデフォルトで有効化
+  auto_mode: true
+  
+  # --create-pr をデフォルトで有効化
+  create_pr: true
+  
+  # ドラフトPRはオフ（本番向け）
+  draft_pr: false
+
+# ========================================
+# Sandbox設定（v1.2.0+）
+# ========================================
+sandbox:
+  # container-useを優先使用
+  type: container-use
+  
+  # 利用不可の場合はホスト環境にフォールバック
+  fallback: host
+  
+  container_use:
+    image: node:20
+
+# 依存関係設定（v1.3.0+）
+dependency:
+  # 依存Issueを自動的に先に実行
+  resolve: true
+  ignore: false

@@ -21,4 +21,7 @@ worktree:
     - ".envrc"
     - ".env.local"
 sandbox:
-  type: container-use
+  type: docker
+  docker:
+    image: node:20-alpine
+    network: bridge

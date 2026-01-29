@@ -1,4 +1,4 @@
-backend: opencode
+backend: pi
 auto: false
 create_pr: true
 max_iterations: 100

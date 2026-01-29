@@ -1,10 +1,12 @@
 import type { Todo } from "./todo.ts";
 import { createTodo } from "./todo.ts";
 
-const DATA_FILE = "./todos.json";
+function getDataFile() {
+  return process.env.TODO_DATA_FILE || "./todos.json";
+}
 
 export async function loadTodos(): Promise<Todo[]> {
-  const file = Bun.file(DATA_FILE);
+  const file = Bun.file(getDataFile());
   if (!(await file.exists())) {
     return [];
   }
@@ -13,7 +15,7 @@ export async function loadTodos(): Promise<Todo[]> {
 }
 
 export async function saveTodos(todos: Todo[]): Promise<void> {
-  await Bun.write(DATA_FILE, JSON.stringify(todos, null, 2));
+  await Bun.write(getDataFile(), JSON.stringify(todos, null, 2));
 }
 
 export async function addTodo(title: string): Promise<Todo> {

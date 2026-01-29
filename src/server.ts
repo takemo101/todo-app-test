@@ -40,7 +40,7 @@ async function reorderTodos(orderedIds: number[]): Promise<Todo[]> {
 }
 
 const server = Bun.serve<WebSocketData>({
-  port: 3000,
+  port: parseInt(process.env.PORT || "3000"),
   
   routes: {
     "/": index,
@@ -142,3 +142,5 @@ const server = Bun.serve<WebSocketData>({
 });
 
 console.log(`Server running at http://localhost:${server.port}`);
+
+export { server };

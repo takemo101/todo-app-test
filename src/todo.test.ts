@@ -3,7 +3,8 @@ import { createTodo, completeTodo, type Todo } from "./todo.ts";
 import { addTodo, listTodos, markDone, removeTodo, saveTodos } from "./store.ts";
 import { unlink } from "node:fs/promises";
 
-const TEST_DATA_FILE = "./todos.json";
+const TEST_DATA_FILE = "./todos-test.json";
+process.env.TODO_DATA_FILE = TEST_DATA_FILE;
 
 async function cleanupTestFile() {
   try {

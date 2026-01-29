@@ -1,36 +1,18 @@
-version: "1.0"
-
-backend:
-  type: opencode
-
-loop:
-  max_iterations: 100
-  completion_promise: "LOOP_COMPLETE"
-
-state:
-  use_github_labels: true
-  label_prefix: "orch"
-
-session:
-  type: auto
-  prefix: "orch"
-
-run:
-  create_pr: true
-  auto_mode: false
-
-pr:
-  auto_merge: true
-  merge_method: merge
-  delete_branch: true
-  ci_timeout_secs: 1800
+backend: opencode
+auto: false
+create_pr: true
+max_iterations: 100
+preset: simple
 
 worktree:
   enabled: true
   base_dir: ".worktrees"
-  base_branch: main
-  auto_cleanup: true
-  copy_env_files:
+  copy_files:
     - ".env"
     - ".envrc"
     - ".env.local"
+
+session:
+  manager: auto
+  prefix: orch
+  capture_interval: 500

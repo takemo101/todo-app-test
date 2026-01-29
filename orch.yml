@@ -1,20 +1,30 @@
 version: "1.0"
+
 backend:
   type: opencode
+
 loop:
   max_iterations: 100
   completion_promise: "LOOP_COMPLETE"
+
 state:
-  use_github_labels: true # ラベル機能を有効化
+  use_github_labels: true
   label_prefix: "orch"
+
+session:
+  type: auto
+  prefix: "orch"
+
 run:
-  create_pr: true # PR自動作成を有効化
-  auto_mode: false # 承認ゲートを使用する場合はfalse
+  create_pr: true
+  auto_mode: false
+
 pr:
-  auto_merge: true # 自動マージを有効化
-  merge_method: merge # squash | merge | rebase
-  delete_branch: true # マージ後にブランチ削除
+  auto_merge: true
+  merge_method: merge
+  delete_branch: true
   ci_timeout_secs: 1800
+
 worktree:
   enabled: true
   base_dir: ".worktrees"
